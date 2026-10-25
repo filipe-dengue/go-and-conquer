@@ -1,3 +1,4 @@
+#include "raylib.h"
 #include "telas.h"
 #include "utils.h"
 
@@ -47,9 +48,16 @@ void draw_menu_preferencias(EstadoGame *estado){
             "wisteria"
         };
 
-        sprintf(caminho_temas, "%s%s/style_%s.rgs", caminho_temas, nomes_temas[selecao_combo_box], nomes_temas[selecao_combo_box]);
+        if(strcmp(nomes_temas[selecao_combo_box], "default") == 0){
+            GuiLoadStyleDefault();
+        }else{
+            // Resolve problema de vazamento de mémoria da biblioteca
+            UnloadFont(GuiGetFont());
 
-        GuiLoadStyle(caminho_temas);
+            sprintf(caminho_temas, "%s%s/style_%s.rgs", caminho_temas, nomes_temas[selecao_combo_box], nomes_temas[selecao_combo_box]);
+
+            GuiLoadStyle(caminho_temas);
+        }
 
         selecao_combo_box_antigo = selecao_combo_box;
     }
