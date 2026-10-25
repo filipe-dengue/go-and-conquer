@@ -17,7 +17,7 @@ void draw_menu_preferencias(EstadoGame *estado){
         (Rectangle){ 528, 648, 192, 48 },
     };
 
-    static const char opcoes_temas[] = "Default;Advance;Amber;Ashes;Bluish;Brick;Candy;Cherry;Cyber;Dark;Enefete;Genesis;Jungle;Lavanda;Pocket;Rltech;Sunny;Terminal;Turbo;Wisteria";
+    static const char opcoes_temas[] = "Default;Jungle;Terminal;Advance;Amber;Ashes;Bluish;Brick;Candy;Cherry;Cyber;Dark;Enefete;Genesis;Lavanda;Pocket;Rltech;Sunny;Turbo;Wisteria";
 
     GuiLabel(layoutRecs[0], "Preferências Visuais");
     GuiLine(layoutRecs[1], NULL);
@@ -27,6 +27,8 @@ void draw_menu_preferencias(EstadoGame *estado){
         char caminho_temas[150] = "raylib/raygui/styles/";
         const char nomes_temas[][10] = {
             "default",
+            "jungle",
+            "terminal",
             "advance",
             "amber",
             "ashes",
@@ -38,12 +40,10 @@ void draw_menu_preferencias(EstadoGame *estado){
             "dark",
             "enefete",
             "genesis",
-            "jungle",
             "lavanda",
             "pocket",
             "rltech",
             "sunny",
-            "terminal",
             "turbo",
             "wisteria"
         };
