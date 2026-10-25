@@ -10,7 +10,7 @@ void draw_menu_preferencias(EstadoGame *estado){
     static int selecao_combo_box_antigo = 0;
     static int selecao_combo_box = 0;
 
-    Rectangle layoutRecs[6] = {
+    static Rectangle layoutRecs[6] = {
         (Rectangle){ 24, 24, 384, 648 },
         (Rectangle){ 432, 24, 824, 648 },
         (Rectangle){ 48, 72, 336, 48 },

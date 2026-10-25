@@ -1,5 +1,5 @@
 
-AQUIVOS_O :=build/main.o build/menu_config.o build/menu_principal.o
+AQUIVOS_O :=build/main.o build/menu_config.o build/menu_principal.o build/arena.o
 FLAGS :=-Lraylib/raylib-linux/lib -Wl,-Bstatic -lraylib -Wl,-Bdynamic -lm -lpthread -ldl -lrt -lX11 -flto -fsanitize=address -Wall
 INCLUDES :=-Iincludes -Iraylib/raylib-linux/include -Iraylib/raygui/src
 
@@ -14,6 +14,9 @@ build/menu_config.o: src/telas/menu_config.c includes/telas.h
 
 build/menu_principal.o: src/telas/menu_principal.c includes/telas.h
 	gcc -c src/telas/menu_principal.c $(INCLUDES) $(FLAGS) -o build/menu_principal.o
+
+build/arena.o: src/helpers/arena.c includes/arena.h
+	gcc -c src/helpers/arena.c $(INCLUDES) $(FLAGS) -o build/arena.o
 
 build/:
 	mkdir build/
