@@ -1,4 +1,4 @@
-#include "menu_principal.h"
+#include "telas.h"
 #include "raylib.h"
 
 #define RAYGUI_IMPLEMENTATION
@@ -12,14 +12,17 @@ int main()
     SetTargetFPS(60);
 
     EstadoGame estado = { 0 };
+    bool fechar_janela = false;
 
-    while (!WindowShouldClose())
+    while (!WindowShouldClose() && !fechar_janela)
     {
         BeginDrawing();
             ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
 
             switch (estado.atual) {
-                default: draw_menu_principal(&estado); break;
+                case TELA_PREFERENCIAS: draw_menu_preferencias(&estado); break;
+
+                default: fechar_janela = draw_menu_principal(&estado); break;
             }
 
         EndDrawing();

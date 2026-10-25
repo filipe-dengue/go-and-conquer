@@ -1,10 +1,11 @@
-#include "menu_principal.h"
+#include "telas.h"
 #include "utils.h"
 
 #include "raylib.h"
 #include "raygui.h"
 
-void draw_menu_principal(EstadoGame *estado){
+// retorma se a janela deve ser fechada
+bool draw_menu_principal(EstadoGame *estado){
 
     // Defini posição de cada objeto
     static Rectangle layoutRecs[8] = {
@@ -22,8 +23,16 @@ void draw_menu_principal(EstadoGame *estado){
     GuiGroupBox(layoutRecs[1], NULL);
     GuiGroupBox(layoutRecs[2], "MENU");
     GuiGroupBox(layoutRecs[3], NULL);
+
     GuiButton(layoutRecs[4], "JOGAR");
     GuiButton(layoutRecs[5], "EDITOR");
-    GuiButton(layoutRecs[6], "PREFERÊNCIAS");
-    GuiButton(layoutRecs[7], "SAIR");
+    if(GuiButton(layoutRecs[6], "PREFERÊNCIAS")){
+        estado->atual = TELA_PREFERENCIAS;
+    }
+
+    if(GuiButton(layoutRecs[7], "SAIR")){
+        return true;
+    }
+
+    return false;
 }
