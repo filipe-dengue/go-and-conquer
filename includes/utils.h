@@ -4,7 +4,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "raylib.h"
+typedef enum{
+    TELA_MENU
+}Tela;
 
-#define RAYGUI_IMPLEMENTATION
-#include "raygui.h"
+typedef struct{
+    Tela atual;
+}EstadoGame;

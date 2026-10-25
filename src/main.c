@@ -1,28 +1,25 @@
+#include "menu_principal.h"
+#include "raylib.h"
+
+#define RAYGUI_IMPLEMENTATION
+#include "raygui.h"
+
 #include "utils.h"
 
 int main()
 {
-    InitWindow(400, 200, "raygui - controls test suite");
+    InitWindow(1280, 720, "Go and Conquer! - By Dengue Schausst");
     SetTargetFPS(60);
 
-    bool showMessageBox = false;
+    EstadoGame estado = { 0 };
 
     while (!WindowShouldClose())
     {
-        // Draw
-        //----------------------------------------------------------------------------------
         BeginDrawing();
             ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
 
-            if (GuiButton((Rectangle){ 24, 24, 120, 30 }, "#191#Show Message")) showMessageBox = true;
-
-            if (showMessageBox)
-            {
-                int btnActive = -1;
-                GuiMessageBox((Rectangle){ 85, 70, 250, 100 },
-                    "#191#Message Box", "Hi! This is a message!", "Nice;Cool", &btnActive);
-
-                if (btnActive >= 0) showMessageBox = false;
+            switch (estado.atual) {
+                default: draw_menu_principal(&estado); break;
             }
 
         EndDrawing();
