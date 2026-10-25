@@ -1,0 +1,5 @@
+CompileFlags:
+  Add:
+    - "-I/home/filipe/Projetos/go_and_conquer/raylib/raygui/src"
+    - "-I/home/filipe/Projetos/go_and_conquer/raylib/raylib-linux/include"
+    - "-I/home/filipe/Projetos/go_and_conquer/includes"
