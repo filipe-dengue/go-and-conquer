@@ -60,3 +60,5 @@ tarefas.md
 rguilayout/
 layout_name.c
 teste.c
+makefile
+*.mk
