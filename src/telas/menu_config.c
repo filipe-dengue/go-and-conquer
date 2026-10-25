@@ -8,19 +8,24 @@
 
 void draw_menu_preferencias(EstadoGame *estado){
     static int selecao_combo_box_antigo = 0;
-    int selecao_combo_box = selecao_combo_box_antigo;
+    static int selecao_combo_box = 0;
 
-    static const Rectangle layoutRecs[4] = {
-        (Rectangle){ 24, 16, 128, 16 },
-        (Rectangle){ 144, 16, 1096, 16 },
-        (Rectangle){ 24, 48, 1224, 48 },
-        (Rectangle){ 528, 648, 192, 48 },
+    Rectangle layoutRecs[6] = {
+        (Rectangle){ 24, 24, 384, 648 },
+        (Rectangle){ 432, 24, 824, 648 },
+        (Rectangle){ 48, 72, 336, 48 },
+        (Rectangle){ 48, 48, 48, 16 },
+        (Rectangle){ 96, 48, 280, 16 },
+        (Rectangle){ 48, 600, 336, 48 },
     };
 
     static const char opcoes_temas[] = "Default;Jungle;Terminal;Advance;Amber;Ashes;Bluish;Brick;Candy;Cherry;Cyber;Dark;Enefete;Genesis;Lavanda;Pocket;Rltech;Sunny;Turbo;Wisteria";
 
-    GuiLabel(layoutRecs[0], "Preferências Visuais");
-    GuiLine(layoutRecs[1], NULL);
+    GuiGroupBox(layoutRecs[0], "OPÇÕES");
+    GuiGroupBox(layoutRecs[1], NULL);
+    GuiLabel(layoutRecs[3], "TEMAS");
+    GuiLine(layoutRecs[4], NULL);
+
     GuiComboBox(layoutRecs[2], opcoes_temas, &selecao_combo_box);
 
     if(selecao_combo_box != selecao_combo_box_antigo){
@@ -62,7 +67,7 @@ void draw_menu_preferencias(EstadoGame *estado){
         selecao_combo_box_antigo = selecao_combo_box;
     }
 
-    if(GuiButton(layoutRecs[3], "VOLTAR")){
+    if(GuiButton(layoutRecs[5], "VOLTAR")){
         estado->atual = TELA_MENU;
     }
 }

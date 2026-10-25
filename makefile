@@ -1,6 +1,6 @@
 
 AQUIVOS_O :=build/main.o build/menu_config.o build/menu_principal.o
-FLAGS :=-Lraylib/raylib-linux/lib -Wl,-Bstatic -lraylib -Wl,-Bdynamic -lm -lpthread -ldl -lrt -lX11
+FLAGS :=-Lraylib/raylib-linux/lib -Wl,-Bstatic -lraylib -Wl,-Bdynamic -lm -lpthread -ldl -lrt -lX11 -flto -fsanitize=address -Wall
 INCLUDES :=-Iincludes -Iraylib/raylib-linux/include -Iraylib/raygui/src
 
 go_and_conquer.elf: build/ $(AQUIVOS_O)

@@ -11,7 +11,7 @@ bool draw_menu_principal(EstadoGame *estado){
     static Rectangle layoutRecs[8] = {
         (Rectangle){ 24, 24, 384, 96 },
         (Rectangle){ 24, 152, 384, 520 },
-        (Rectangle){ 432, 24, 816, 648 },
+        (Rectangle){ 432, 24, 824, 648 },
         (Rectangle){ 48, 176, 336, 72 },
         (Rectangle){ 48, 272, 336, 72 },
         (Rectangle){ 48, 464, 336, 72 },
