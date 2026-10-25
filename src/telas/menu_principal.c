@@ -26,7 +26,10 @@ bool draw_menu_principal(EstadoGame *estado){
 
     GuiButton(layoutRecs[3], "JOGAR");
     GuiButton(layoutRecs[4], "EDITOR MAPAS");
-    GuiButton(layoutRecs[7], "EDITOR NAÇÕES");
+
+    if(GuiButton(layoutRecs[7], "EDITOR NAÇÕES")){
+        estado->atual = TELA_EDITOR_NACOES;
+    }
 
     if(GuiButton(layoutRecs[5], "PREFERÊNCIAS")){
         estado->atual = TELA_PREFERENCIAS;
