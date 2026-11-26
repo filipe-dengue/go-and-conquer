@@ -66,7 +66,7 @@ void draw_menu_nacoes(EstadoGame *estado){
 
     // Btn voltar
     if(GuiButton((Rectangle){btns_rec.x, y, btns_rec.width, btns_rec.height * 2}, "VOLTAR")){
-        estado->atual = TELA_MENU;
+        estado->atual = SAIR_EDITOR_NACOES;
     }
     y +=  btns_rec.height * 2 + OFSSET_BTN;
 

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 // Serve para alocar uma arena com 1 kilobyte
-#define SIZE_ARENA_PADRAO 1024
+#define KB 1024
 
 // Alocador de arena
 typedef unsigned char byte;
